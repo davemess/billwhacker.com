@@ -1,276 +1,2040 @@
-<!DOCTYPE html><html data-theme="light"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="stylesheet" href="https://static.paraflowcontent.com/public/css/font-awesome/font-awesome.672.css">
-    <link rel="stylesheet" href="https://static.paraflowcontent.com/public/css/tailwind/v4-preflight-1.css">
+<!DOCTYPE html>
+<html data-theme="light">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <link
+      rel="stylesheet"
+      href="https://static.paraflowcontent.com/public/css/font-awesome/font-awesome.672.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://static.paraflowcontent.com/public/css/tailwind/v4-preflight-1.css"
+    />
     <script src="https://static.paraflowcontent.com/public/js/iconify/iconify-icon-3.0.0.js"></script>
     <style>
-    * {
+      * {
         scrollbar-width: none;
-    }
-    textarea {
+      }
+
+      textarea {
         resize: none;
-    }
-    input::-webkit-calendar-picker-indicator {
+      }
+
+      input::-webkit-calendar-picker-indicator {
         visibility: hidden;
-    }
-    select {
+      }
+
+      select {
         appearance: none;
-    }
+      }
     </style>
     <script>
-        window.addEventListener('load', () => {
-            window.parent.postMessage({
-                type: 'setHeight',
-                id: 'element-frame-32:1',
-                height: document.body.scrollHeight
-            }, '*')
+      window.addEventListener("load", () => {
+        window.parent.postMessage(
+          {
+            type: "setHeight",
+            id: "element-frame-32:1",
+            height: document.body.scrollHeight,
+          },
+          "*"
+        );
 
-            const observer = new MutationObserver(() => {
-                window.parent.postMessage({
-                    type: 'setHeight',
-                    id: 'element-frame-32:1',
-                    height: document.body.scrollHeight
-                }, '*')
-            })
+        const observer = new MutationObserver(() => {
+          window.parent.postMessage(
+            {
+              type: "setHeight",
+              id: "element-frame-32:1",
+              height: document.body.scrollHeight,
+            },
+            "*"
+          );
+        });
 
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true,
-                characterData: true,
-                attributes: true
-            })
-        })
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true,
+          characterData: true,
+          attributes: true,
+        });
+      });
 
-        window.addEventListener('resize', () => {
-            window.parent.postMessage({
-                type: 'setHeight',
-                id: 'element-frame-32:1',
-                height: document.body.scrollHeight
-            }, '*')
-        })
+      window.addEventListener("resize", () => {
+        window.parent.postMessage(
+          {
+            type: "setHeight",
+            id: "element-frame-32:1",
+            height: document.body.scrollHeight,
+          },
+          "*"
+        );
+      });
     </script>
     <style id="moxt-styled">
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=PT+Serif:wght@400;700&family=Arimo:wght@400;500;600;700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700&;800;900&family=Rubik:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&family=Merriweather:wght@300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=PT+Serif:wght@400;700&family=Arimo:wght@400;500;600;700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700&;800;900&family=Rubik:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&family=Merriweather:wght@300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-.pf-539d0a36-font-family-base {font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;}
-.pf-2fded672-font-display {font-family: "Courier New", "Courier", monospace;}
-.pf-body {font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;}
-.pf-container-center {max-width: 1200px; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; padding-top: 0; padding-right: 2rem; padding-bottom: 0; padding-left: 2rem;}
-.pf-784bb160-BODY-350502a790b4b62d7d368c9e57ee139f {font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;}
-.pf-f2a492a3-container-center {max-width: 1200px; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; padding-top: 0; padding-right: 2rem; padding-bottom: 0; padding-left: 2rem;}
-</style></head>
-    <body id="32:1" title="pre-launch-sir-bill-whacker.html" class="font-[-apple-system,BlinkMacSystemFont,'Segoe UI']" style="background-color: rgba(245, 239, 230, 1); width: 1440px; min-height: 900px; line-height: 1.5;">
-<header id="32:2" style="background-color: rgba(255, 249, 240, 1); width: 100%; padding-top: 1rem; padding-right: 2rem; padding-bottom: 1rem; padding-left: 2rem; border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-bottom-style: solid; border-bottom-width: 3px;">
-<nav id="32:3" style="display: flex; justify-content: space-between; align-items: center;">
-<div id="32:4" style="display: flex; align-items: center; row-gap: 0.75rem; column-gap: 0.75rem;">
-<div id="32:5" style="background-color: rgba(200, 168, 130, 1); display: flex; justify-content: center; align-items: center; width: 2.5rem; height: 2.5rem; border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 9999px; border-top-right-radius: 9999px; border-bottom-right-radius: 9999px; border-bottom-left-radius: 9999px;">
-<iconify-icon id="32:6" style="line-height: 1.55556; color: rgba(45, 36, 22, 1); font-size: 1.125rem;" icon="mdi:shield-sword"></iconify-icon>
-</div>
-<div id="32:7" style="display: flex; flex-direction: column;">
-<span id="32:8" style="line-height: 1.4; color: rgba(45, 36, 22, 1); font-size: 1.25rem; font-weight: 700;">Sir Bill Whacker, O.B.E.</span>
-<span id="32:9" style="text-transform: uppercase; letter-spacing: 0.025em; line-height: 1.42857; color: rgba(200, 168, 130, 1); font-size: 0.875rem; font-weight: 600;">OVERBILLING ELIMINATOR</span>
-</div>
-</div>
-<div id="32:10" style="display: flex; align-items: center; row-gap: 2rem; column-gap: 2rem;">
-<div id="32:11" style="background-color: rgba(232, 86, 60, 1); display: flex; rotate: 2deg; justify-content: center; align-items: center; padding-top: 0.5rem; padding-right: 1rem; padding-bottom: 0.5rem; padding-left: 1rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 3px 3px 0 rgba(45, 36, 22, 1); line-height: 1.42857; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 0.875rem; font-weight: 900;">
-<span id="32:12">COMING SOON!</span>
-</div>
-</div>
-</nav>
-</header>
-<main id="32:13" style="width: 100%;">
-<section id="32:14" style="overflow-x: hidden; overflow-y: hidden; position: relative; padding-top: 4rem; padding-right: 2rem; padding-bottom: 4rem; padding-left: 2rem;">
-<div id="32:15" style="background-color: rgba(232, 86, 60, 1); display: flex; position: absolute; top: 2rem; right: 2rem; rotate: -2deg; justify-content: center; align-items: center; padding-top: 0.5rem; padding-right: 1rem; padding-bottom: 0.5rem; padding-left: 1rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 3px 3px 0 rgba(45, 36, 22, 1); line-height: 1.5; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 1rem; font-weight: 900;">
+      .pf-539d0a36-font-family-base {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+
+      .pf-2fded672-font-display {
+        font-family: "Courier New", "Courier", monospace;
+      }
+
+      .pf-body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+
+      .pf-container-center {
+        max-width: 1200px;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        padding-top: 0;
+        padding-right: 2rem;
+        padding-bottom: 0;
+        padding-left: 2rem;
+      }
+
+      .pf-784bb160-BODY-350502a790b4b62d7d368c9e57ee139f {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+
+      .pf-f2a492a3-container-center {
+        max-width: 1200px;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        padding-top: 0;
+        padding-right: 2rem;
+        padding-bottom: 0;
+        padding-left: 2rem;
+      }
+    </style>
+  </head>
+  <body
+    id="32:1"
+    title="pre-launch-sir-bill-whacker.html"
+    class="font-[-apple-system,BlinkMacSystemFont,'Segoe UI']"
+    style="
+      background-color: rgba(245, 239, 230, 1);
+      width: 100%;
+      min-height: 900px;
+      line-height: 1.5;
+    "
+  >
+    <header
+      id="32:2"
+      style="
+        background-color: rgba(255, 249, 240, 1);
+        width: 100%;
+        padding-top: 1rem;
+        padding-right: 2rem;
+        padding-bottom: 1rem;
+        padding-left: 2rem;
+        border-top-color: rgba(45, 36, 22, 1);
+        border-right-color: rgba(45, 36, 22, 1);
+        border-bottom-color: rgba(45, 36, 22, 1);
+        border-left-color: rgba(45, 36, 22, 1);
+        border-bottom-style: solid;
+        border-bottom-width: 3px;
+      "
+    >
+      <nav
+        id="32:3"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div
+          id="32:4"
+          style="
+            display: flex;
+            align-items: center;
+            row-gap: 0.75rem;
+            column-gap: 0.75rem;
+          "
+        >
+          <div
+            id="32:5"
+            style="
+              background-color: rgba(200, 168, 130, 1);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 2.5rem;
+              height: 2.5rem;
+              border-top-color: rgba(45, 36, 22, 1);
+              border-right-color: rgba(45, 36, 22, 1);
+              border-bottom-color: rgba(45, 36, 22, 1);
+              border-left-color: rgba(45, 36, 22, 1);
+              border-top-style: solid;
+              border-right-style: solid;
+              border-bottom-style: solid;
+              border-left-style: solid;
+              border-top-width: 3px;
+              border-right-width: 3px;
+              border-bottom-width: 3px;
+              border-left-width: 3px;
+              border-top-left-radius: 9999px;
+              border-top-right-radius: 9999px;
+              border-bottom-right-radius: 9999px;
+              border-bottom-left-radius: 9999px;
+            "
+          >
+            <iconify-icon
+              id="32:6"
+              style="
+                line-height: 1.55556;
+                color: rgba(45, 36, 22, 1);
+                font-size: 1.125rem;
+              "
+              icon="mdi:shield-sword"
+            ></iconify-icon>
+          </div>
+          <div id="32:7" style="display: flex; flex-direction: column">
+            <span
+              id="32:8"
+              style="
+                line-height: 1.4;
+                color: rgba(45, 36, 22, 1);
+                font-size: 1.25rem;
+                font-weight: 700;
+              "
+              >Sir William Ainsley Whacker, O.B.E.</span
+            >
+            <span
+              id="32:9"
+              style="
+                text-transform: uppercase;
+                letter-spacing: 0.025em;
+                line-height: 1.42857;
+                color: rgba(200, 168, 130, 1);
+                font-size: 0.875rem;
+                font-weight: 600;
+              "
+              >OVERBILLING ELIMINATOR</span
+            >
+          </div>
+        </div>
+        <div
+          id="32:10"
+          style="
+            display: flex;
+            align-items: center;
+            row-gap: 2rem;
+            column-gap: 2rem;
+          "
+        >
+          <div
+            id="32:11"
+            style="
+              background-color: rgba(232, 86, 60, 1);
+              display: flex;
+              rotate: 2deg;
+              justify-content: center;
+              align-items: center;
+              padding-top: 0.5rem;
+              padding-right: 1rem;
+              padding-bottom: 0.5rem;
+              padding-left: 1rem;
+              box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                3px 3px 0 rgba(45, 36, 22, 1);
+              line-height: 1.42857;
+              color: rgba(255, 255, 255, 1);
+              border-top-color: rgba(45, 36, 22, 1);
+              border-right-color: rgba(45, 36, 22, 1);
+              border-bottom-color: rgba(45, 36, 22, 1);
+              border-left-color: rgba(45, 36, 22, 1);
+              border-top-style: solid;
+              border-right-style: solid;
+              border-bottom-style: solid;
+              border-left-style: solid;
+              border-top-width: 3px;
+              border-right-width: 3px;
+              border-bottom-width: 3px;
+              border-left-width: 3px;
+              border-top-left-radius: 0.25rem;
+              border-top-right-radius: 0.25rem;
+              border-bottom-right-radius: 0.25rem;
+              border-bottom-left-radius: 0.25rem;
+              font-size: 0.875rem;
+              font-weight: 900;
+            "
+          >
+            <span id="32:12">LAUNCHING SOON!</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="32:13" style="width: 100%">
+      <section
+        id="32:14"
+        style="
+          overflow-x: hidden;
+          overflow-y: hidden;
+          position: relative;
+          padding-top: 4rem;
+          padding-right: 2rem;
+          padding-bottom: 4rem;
+          padding-left: 2rem;
+        "
+      >
+        <!-- <div id="32:15" style="background-color: rgba(232, 86, 60, 1); display: flex; position: absolute; top: 2rem; right: 2rem; rotate: -2deg; justify-content: center; align-items: center; padding-top: 0.5rem; padding-right: 1rem; padding-bottom: 0.5rem; padding-left: 1rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 3px 3px 0 rgba(45, 36, 22, 1); line-height: 1.5; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 1rem; font-weight: 900;">
 <span id="32:16">WHACK!</span>
 </div>
 <div id="32:17" style="background-color: rgba(212, 145, 47, 1); display: flex; position: absolute; bottom: 4rem; left: 4rem; rotate: 3deg; justify-content: center; align-items: center; padding-top: 0.5rem; padding-right: 1rem; padding-bottom: 0.5rem; padding-left: 1rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 3px 3px 0 rgba(45, 36, 22, 1); line-height: 1.5; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 1rem; font-weight: 900;">
 <span id="32:18">SLASH!</span>
-</div>
-<div id="32:19" style="background-color: rgba(74, 124, 78, 1); display: flex; position: absolute; top: 8rem; left: 2rem; rotate: -1deg; justify-content: center; align-items: center; padding-top: 0.5rem; padding-right: 1rem; padding-bottom: 0.5rem; padding-left: 1rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 3px 3px 0 rgba(45, 36, 22, 1); line-height: 1.5; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 1rem; font-weight: 900;">
+</div> -->
+        <!-- <div id="32:19" style="background-color: rgba(74, 124, 78, 1); display: flex; position: absolute; top: 8rem; left: 2rem; rotate: -1deg; justify-content: center; align-items: center; padding-top: 0.5rem; padding-right: 1rem; padding-bottom: 0.5rem; padding-left: 1rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 3px 3px 0 rgba(45, 36, 22, 1); line-height: 1.5; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 1rem; font-weight: 900;">
 <span id="32:20">BOOM!</span>
-</div>
-<div id="32:21" style="display: flex; flex-direction: column; row-gap: 2rem; column-gap: 2rem; width: 100%; max-width: 72rem; margin-right: auto; margin-left: auto;">
-<div id="32:24" style="display: flex; flex-direction: column; flex-basis: 0%; row-gap: 2rem; column-gap: 2rem; width: 100%; padding-right: 2rem; padding-left: 2rem;">
-<div id="32:25" style="display: flex; flex-direction: column; row-gap: 1rem; column-gap: 1rem;">
-<h1 id="32:26" class="pf-2fded672-font-display" style="text-align: center; line-height: 1.25; color: rgba(45, 36, 22, 1); font-size: 3rem; font-weight: 900;">
-<span id="32:27">SIR BILL WHACKER'S</span><br id="32:28">
-<span id="32:29" style="color: rgba(232, 86, 60, 1);">CRUSADE BEGINS SOON!</span>
-</h1>
-<p id="32:30" class="pf-2fded672-font-display" style="text-align: center; max-width: 56rem; margin-right: auto; margin-left: auto; line-height: 1.33333; color: rgba(92, 74, 50, 1); font-size: 1.5rem; font-weight: 600;">
-                            The legendary Overbilling Eliminator is preparing for the ultimate battle against medical billing tyranny. Brave souls needed for the most epic treasure rescue mission ever undertaken!
-                        </p>
-</div>
-<div id="32:31" style="background-color: rgba(255, 255, 255, 1); position: relative; max-width: 56rem; margin-right: auto; margin-left: auto; padding-top: 2rem; padding-right: 2rem; padding-bottom: 2rem; padding-left: 2rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 6px 6px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
-<div id="32:32" style="background-color: rgba(212, 145, 47, 1); display: flex; position: absolute; top: -1rem; left: -1rem; rotate: -5deg; justify-content: center; align-items: center; padding-top: 0.25rem; padding-right: 0.75rem; padding-bottom: 0.25rem; padding-left: 0.75rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 3px 3px 0 rgba(45, 36, 22, 1); line-height: 1.42857; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 0.875rem; font-weight: 900;">
-<span id="32:33">RECRUITMENT BRIEF</span>
-</div>
-<div id="32:34" style="display: flex; flex-direction: column; row-gap: 1.5rem; column-gap: 1.5rem;">
-<h2 id="32:35" class="pf-2fded672-font-display" style="text-align: center; line-height: 1.33333; color: rgba(45, 36, 22, 1); font-size: 1.5rem; font-weight: 700;">
-                                ENLIST FOR THE CRUSADE!
-                            </h2>
-<div id="32:36" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 1rem; column-gap: 1rem; margin-bottom: 1.5rem;">
-<div id="32:37" style="background-color: rgba(255, 249, 240, 1); text-align: center; padding-top: 1rem; padding-right: 1rem; padding-bottom: 1rem; padding-left: 1rem; border-top-color: rgba(200, 168, 130, 1); border-right-color: rgba(200, 168, 130, 1); border-bottom-color: rgba(200, 168, 130, 1); border-left-color: rgba(200, 168, 130, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem;">
-<div id="32:38" style="background-color: rgba(200, 168, 130, 1); display: flex; justify-content: center; align-items: center; width: 3rem; height: 3rem; margin-right: auto; margin-bottom: 0.5rem; margin-left: auto; border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 9999px; border-top-right-radius: 9999px; border-bottom-right-radius: 9999px; border-bottom-left-radius: 9999px;">
-<iconify-icon id="32:39" style="line-height: 1.4; color: rgba(45, 36, 22, 1); font-size: 1.25rem;" icon="mdi:target"></iconify-icon>
-</div>
-<p id="32:40" style="line-height: 1.42857; color: rgba(45, 36, 22, 1); font-size: 0.875rem; font-weight: 700;">Hunt Down Overcharges</p>
-</div>
-<div id="32:41" style="background-color: rgba(255, 249, 240, 1); text-align: center; padding-top: 1rem; padding-right: 1rem; padding-bottom: 1rem; padding-left: 1rem; border-top-color: rgba(200, 168, 130, 1); border-right-color: rgba(200, 168, 130, 1); border-bottom-color: rgba(200, 168, 130, 1); border-left-color: rgba(200, 168, 130, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem;">
-<div id="32:42" style="background-color: rgba(200, 168, 130, 1); display: flex; justify-content: center; align-items: center; width: 3rem; height: 3rem; margin-right: auto; margin-bottom: 0.5rem; margin-left: auto; border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 9999px; border-top-right-radius: 9999px; border-bottom-right-radius: 9999px; border-bottom-left-radius: 9999px;">
-<iconify-icon id="32:43" style="line-height: 1.4; color: rgba(45, 36, 22, 1); font-size: 1.25rem;" icon="mdi:sword"></iconify-icon>
-</div>
-<p id="32:44" style="line-height: 1.42857; color: rgba(45, 36, 22, 1); font-size: 0.875rem; font-weight: 700;">Slash Inflated Bills</p>
-</div>
-<div id="32:45" style="background-color: rgba(255, 249, 240, 1); text-align: center; padding-top: 1rem; padding-right: 1rem; padding-bottom: 1rem; padding-left: 1rem; border-top-color: rgba(200, 168, 130, 1); border-right-color: rgba(200, 168, 130, 1); border-bottom-color: rgba(200, 168, 130, 1); border-left-color: rgba(200, 168, 130, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem;">
-<div id="32:46" style="background-color: rgba(200, 168, 130, 1); display: flex; justify-content: center; align-items: center; width: 3rem; height: 3rem; margin-right: auto; margin-bottom: 0.5rem; margin-left: auto; border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 9999px; border-top-right-radius: 9999px; border-bottom-right-radius: 9999px; border-bottom-left-radius: 9999px;">
-<iconify-icon id="32:47" style="line-height: 1.4; color: rgba(45, 36, 22, 1); font-size: 1.25rem;" icon="mdi:treasure-chest"></iconify-icon>
-</div>
-<p id="32:48" style="line-height: 1.42857; color: rgba(45, 36, 22, 1); font-size: 0.875rem; font-weight: 700;">Rescue Your Wallet</p>
-</div>
-</div>
-<div id="32:49" style="display: flex; flex-direction: column; row-gap: 1rem; column-gap: 1rem;">
-<div id="32:50" style="display: flex; row-gap: 0; column-gap: 0;">
-<input id="32:51" class="focus:border-[#C8A882] focus:outline-none focus:ring-2 focus:ring-[#C8A882]/30" style="background-color: rgba(255, 255, 255, 1); flex-grow: 1; flex-shrink: 1; flex-basis: 0%; padding-top: 0.75rem; padding-right: 1rem; padding-bottom: 0.75rem; padding-left: 1rem; color: rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 0; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-weight: 400;" type="email" placeholder="Enter your email to join the rebellion...">
-<button id="32:52" class="hover:shadow-[2px_2px_0px_rgba(45,36,22,1)] hover:translate-x-[2px] hover:translate-y-[2px]" style="background-color: rgba(232, 86, 60, 1); display: flex; align-items: center; row-gap: 0.5rem; column-gap: 0.5rem; padding-top: 0.75rem; padding-right: 1.5rem; padding-bottom: 0.75rem; padding-left: 1.5rem; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; font-weight: 900;" type="submit">
-<iconify-icon id="32:53" style="line-height: 1.5; font-size: 1rem;" icon="mdi:sword-cross"></iconify-icon>
-<span id="32:54">JOIN THE REBELLION!</span>
-</button>
-</div>
-<div id="32:55" style="display: flex; align-items: center; row-gap: 0.5rem; column-gap: 0.5rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem;">
-<iconify-icon id="32:56" style="line-height: 1.5; color: rgba(74, 124, 78, 1); font-size: 1rem;" icon="mdi:shield-check"></iconify-icon>
-<span id="32:57">Your email is secured in our impenetrable treasure vault. No spam bandits allowed!</span>
-</div>
-</div>
-</div>
-</div>
-<div id="32:58" style="background-color: rgba(45, 36, 22, 1); max-width: 56rem; margin-right: auto; margin-left: auto; padding-top: 2rem; padding-right: 2rem; padding-bottom: 2rem; padding-left: 2rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 4px 4px 0 rgba(200, 168, 130, 1); border-top-color: rgba(200, 168, 130, 1); border-right-color: rgba(200, 168, 130, 1); border-bottom-color: rgba(200, 168, 130, 1); border-left-color: rgba(200, 168, 130, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
-<h3 id="32:59" class="pf-2fded672-font-display" style="text-align: center; margin-bottom: 1rem; line-height: 1.33333; color: rgba(245, 239, 230, 1); font-size: 1.5rem; font-weight: 700;">
-                            "FOUNDING ADVENTURERS GET EXCLUSIVE REWARDS!"
-                        </h3>
-<p id="32:60" style="text-align: center; margin-bottom: 0.5rem; line-height: 1.5; color: rgba(229, 212, 184, 1); font-size: 1rem; font-weight: 600;">
-                            First 1,000 recruits receive Charter Adventurer status with special launch benefits
-                        </p>
-<p id="32:61" class="pf-2fded672-font-display" style="text-align: center; line-height: 1.55556; color: rgba(200, 168, 130, 1); font-size: 1.125rem; font-weight: 700;">
-                            Early Access • Launch Pricing • Insider Updates ⚔️
-                        </p>
-</div>
-</div>
-</div>
-</section>
-<section id="32:62" style="background-color: rgba(255, 255, 255, 1); padding-top: 4rem; padding-right: 2rem; padding-bottom: 4rem; padding-left: 2rem; border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-top-width: 3px;">
-<div id="32:63" style="max-width: 72rem; margin-right: auto; margin-left: auto;">
-<div id="32:64" style="text-align: center; margin-bottom: 3rem;">
-<h2 id="32:65" class="pf-2fded672-font-display" style="margin-bottom: 1rem; line-height: 1.11111; color: rgba(45, 36, 22, 1); font-size: 2.25rem; font-weight: 700;">
-                        SNEAK PEEK: THE ADVENTURE AWAITS
-                    </h2>
-<p id="32:66" style="line-height: 1.55556; color: rgba(92, 74, 50, 1); font-size: 1.125rem; font-weight: 600;">
-                        Witness the AI-powered arsenal Sir Bill will unleash upon billing bandits across the land
+</div> -->
+        <div
+          id="32:21"
+          style="
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            column-gap: 2rem;
+            width: 100%;
+            max-width: 72rem;
+            margin-right: auto;
+            margin-left: auto;
+          "
+        >
+          <div
+            id="32:24"
+            style="
+              display: flex;
+              flex-direction: column;
+              flex-basis: 0%;
+              row-gap: 2rem;
+              column-gap: 2rem;
+              width: 100%;
+              padding-right: 2rem;
+              padding-left: 2rem;
+            "
+          >
+            <div
+              id="32:25"
+              style="
+                display: flex;
+                flex-direction: row;
+                row-gap: 2rem;
+                column-gap: 2rem;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <img
+                src="images/sir_bill.png"
+                alt="Sir Bill Whacker"
+                style="
+                  width: 300px;
+                  height: auto;
+                  border-radius: 0.5rem;
+                  border: 4px solid rgba(45, 36, 22, 1);
+                  box-shadow: 6px 6px 0 rgba(45, 36, 22, 1);
+                "
+              />
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  row-gap: 1rem;
+                  column-gap: 1rem;
+                  flex: 1;
+                "
+              >
+                <h1
+                  id="32:26"
+                  class="pf-2fded672-font-display"
+                  style="
+                    text-align: left;
+                    line-height: 1.25;
+                    color: rgba(45, 36, 22, 1);
+                    font-size: 3rem;
+                    font-weight: 900;
+                  "
+                >
+                  <span id="32:27">SIR BILL WHACKER'S</span><br id="32:28" />
+                  <span id="32:29" style="color: rgba(232, 86, 60, 1)"
+                    >ADVENTURE BEGINS SOON!</span
+                  >
+                </h1>
+                <p
+                  id="32:30"
+                  class="pf-2fded672-font-display"
+                  style="
+                    text-align: left;
+                    line-height: 1.33333;
+                    color: rgba(92, 74, 50, 1);
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                  "
+                >
+                  The legendary Overbilling Eliminator is preparing for the
+                  ultimate battle against billing tyranny. Brave souls needed
+                  for the most epic treasure rescue mission ever undertaken!
+                </p>
+              </div>
+            </div>
+            <div
+              id="32:31"
+              style="
+                background-color: rgba(255, 255, 255, 1);
+                position: relative;
+                max-width: 56rem;
+                margin-right: auto;
+                margin-left: auto;
+                padding-top: 2rem;
+                padding-right: 2rem;
+                padding-bottom: 2rem;
+                padding-left: 2rem;
+                box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  6px 6px 0 rgba(45, 36, 22, 1);
+                border-top-color: rgba(45, 36, 22, 1);
+                border-right-color: rgba(45, 36, 22, 1);
+                border-bottom-color: rgba(45, 36, 22, 1);
+                border-left-color: rgba(45, 36, 22, 1);
+                border-top-style: solid;
+                border-right-style: solid;
+                border-bottom-style: solid;
+                border-left-style: solid;
+                border-top-width: 4px;
+                border-right-width: 4px;
+                border-bottom-width: 4px;
+                border-left-width: 4px;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+                border-bottom-right-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+              "
+            >
+              <div
+                id="32:32"
+                style="
+                  background-color: rgba(212, 145, 47, 1);
+                  display: flex;
+                  position: absolute;
+                  top: -1rem;
+                  left: -1rem;
+                  rotate: -5deg;
+                  justify-content: center;
+                  align-items: center;
+                  padding-top: 0.25rem;
+                  padding-right: 0.75rem;
+                  padding-bottom: 0.25rem;
+                  padding-left: 0.75rem;
+                  box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                    0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                    3px 3px 0 rgba(45, 36, 22, 1);
+                  line-height: 1.42857;
+                  color: rgba(255, 255, 255, 1);
+                  border-top-color: rgba(45, 36, 22, 1);
+                  border-right-color: rgba(45, 36, 22, 1);
+                  border-bottom-color: rgba(45, 36, 22, 1);
+                  border-left-color: rgba(45, 36, 22, 1);
+                  border-top-style: solid;
+                  border-right-style: solid;
+                  border-bottom-style: solid;
+                  border-left-style: solid;
+                  border-top-width: 3px;
+                  border-right-width: 3px;
+                  border-bottom-width: 3px;
+                  border-left-width: 3px;
+                  border-top-left-radius: 0.25rem;
+                  border-top-right-radius: 0.25rem;
+                  border-bottom-right-radius: 0.25rem;
+                  border-bottom-left-radius: 0.25rem;
+                  font-size: 0.875rem;
+                  font-weight: 900;
+                "
+              >
+                <span id="32:33">RECRUITMENT BRIEF</span>
+              </div>
+              <div
+                id="32:34"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  row-gap: 1.5rem;
+                  column-gap: 1.5rem;
+                "
+              >
+                <!-- <h2 id="32:35" class="pf-2fded672-font-display" style="text-align: center; line-height: 1.33333; color: rgba(45, 36, 22, 1); font-size: 1.5rem; font-weight: 700;">
+                                ENLIST TODAY!
+                            </h2> -->
+                <div
+                  id="32:36"
+                  style="
+                    display: grid;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                    row-gap: 1rem;
+                    column-gap: 1rem;
+                    margin-bottom: 1.5rem;
+                  "
+                >
+                  <div
+                    id="32:37"
+                    style="
+                      background-color: rgba(255, 249, 240, 1);
+                      text-align: center;
+                      padding-top: 1rem;
+                      padding-right: 1rem;
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      border-top-color: rgba(200, 168, 130, 1);
+                      border-right-color: rgba(200, 168, 130, 1);
+                      border-bottom-color: rgba(200, 168, 130, 1);
+                      border-left-color: rgba(200, 168, 130, 1);
+                      border-top-style: solid;
+                      border-right-style: solid;
+                      border-bottom-style: solid;
+                      border-left-style: solid;
+                      border-top-width: 2px;
+                      border-right-width: 2px;
+                      border-bottom-width: 2px;
+                      border-left-width: 2px;
+                      border-top-left-radius: 0.25rem;
+                      border-top-right-radius: 0.25rem;
+                      border-bottom-right-radius: 0.25rem;
+                      border-bottom-left-radius: 0.25rem;
+                    "
+                  >
+                    <div
+                      id="32:38"
+                      style="
+                        background-color: rgba(200, 168, 130, 1);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 3rem;
+                        height: 3rem;
+                        margin-right: auto;
+                        margin-bottom: 0.5rem;
+                        margin-left: auto;
+                        border-top-color: rgba(45, 36, 22, 1);
+                        border-right-color: rgba(45, 36, 22, 1);
+                        border-bottom-color: rgba(45, 36, 22, 1);
+                        border-left-color: rgba(45, 36, 22, 1);
+                        border-top-style: solid;
+                        border-right-style: solid;
+                        border-bottom-style: solid;
+                        border-left-style: solid;
+                        border-top-width: 2px;
+                        border-right-width: 2px;
+                        border-bottom-width: 2px;
+                        border-left-width: 2px;
+                        border-top-left-radius: 9999px;
+                        border-top-right-radius: 9999px;
+                        border-bottom-right-radius: 9999px;
+                        border-bottom-left-radius: 9999px;
+                      "
+                    >
+                      <iconify-icon
+                        id="32:39"
+                        style="
+                          line-height: 1.4;
+                          color: rgba(45, 36, 22, 1);
+                          font-size: 1.25rem;
+                        "
+                        icon="mdi:target"
+                      ></iconify-icon>
+                    </div>
+                    <p
+                      id="32:40"
+                      style="
+                        line-height: 1.42857;
+                        color: rgba(45, 36, 22, 1);
+                        font-size: 0.875rem;
+                        font-weight: 700;
+                      "
+                    >
+                      Hunt Down Overcharges
                     </p>
+                  </div>
+                  <div
+                    id="32:41"
+                    style="
+                      background-color: rgba(255, 249, 240, 1);
+                      text-align: center;
+                      padding-top: 1rem;
+                      padding-right: 1rem;
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      border-top-color: rgba(200, 168, 130, 1);
+                      border-right-color: rgba(200, 168, 130, 1);
+                      border-bottom-color: rgba(200, 168, 130, 1);
+                      border-left-color: rgba(200, 168, 130, 1);
+                      border-top-style: solid;
+                      border-right-style: solid;
+                      border-bottom-style: solid;
+                      border-left-style: solid;
+                      border-top-width: 2px;
+                      border-right-width: 2px;
+                      border-bottom-width: 2px;
+                      border-left-width: 2px;
+                      border-top-left-radius: 0.25rem;
+                      border-top-right-radius: 0.25rem;
+                      border-bottom-right-radius: 0.25rem;
+                      border-bottom-left-radius: 0.25rem;
+                    "
+                  >
+                    <div
+                      id="32:42"
+                      style="
+                        background-color: rgba(200, 168, 130, 1);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 3rem;
+                        height: 3rem;
+                        margin-right: auto;
+                        margin-bottom: 0.5rem;
+                        margin-left: auto;
+                        border-top-color: rgba(45, 36, 22, 1);
+                        border-right-color: rgba(45, 36, 22, 1);
+                        border-bottom-color: rgba(45, 36, 22, 1);
+                        border-left-color: rgba(45, 36, 22, 1);
+                        border-top-style: solid;
+                        border-right-style: solid;
+                        border-bottom-style: solid;
+                        border-left-style: solid;
+                        border-top-width: 2px;
+                        border-right-width: 2px;
+                        border-bottom-width: 2px;
+                        border-left-width: 2px;
+                        border-top-left-radius: 9999px;
+                        border-top-right-radius: 9999px;
+                        border-bottom-right-radius: 9999px;
+                        border-bottom-left-radius: 9999px;
+                      "
+                    >
+                      <iconify-icon
+                        id="32:43"
+                        style="
+                          line-height: 1.4;
+                          color: rgba(45, 36, 22, 1);
+                          font-size: 1.25rem;
+                        "
+                        icon="mdi:sword"
+                      ></iconify-icon>
+                    </div>
+                    <p
+                      id="32:44"
+                      style="
+                        line-height: 1.42857;
+                        color: rgba(45, 36, 22, 1);
+                        font-size: 0.875rem;
+                        font-weight: 700;
+                      "
+                    >
+                      Slash Inflated Bills
+                    </p>
+                  </div>
+                  <div
+                    id="32:45"
+                    style="
+                      background-color: rgba(255, 249, 240, 1);
+                      text-align: center;
+                      padding-top: 1rem;
+                      padding-right: 1rem;
+                      padding-bottom: 1rem;
+                      padding-left: 1rem;
+                      border-top-color: rgba(200, 168, 130, 1);
+                      border-right-color: rgba(200, 168, 130, 1);
+                      border-bottom-color: rgba(200, 168, 130, 1);
+                      border-left-color: rgba(200, 168, 130, 1);
+                      border-top-style: solid;
+                      border-right-style: solid;
+                      border-bottom-style: solid;
+                      border-left-style: solid;
+                      border-top-width: 2px;
+                      border-right-width: 2px;
+                      border-bottom-width: 2px;
+                      border-left-width: 2px;
+                      border-top-left-radius: 0.25rem;
+                      border-top-right-radius: 0.25rem;
+                      border-bottom-right-radius: 0.25rem;
+                      border-bottom-left-radius: 0.25rem;
+                    "
+                  >
+                    <div
+                      id="32:46"
+                      style="
+                        background-color: rgba(200, 168, 130, 1);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 3rem;
+                        height: 3rem;
+                        margin-right: auto;
+                        margin-bottom: 0.5rem;
+                        margin-left: auto;
+                        border-top-color: rgba(45, 36, 22, 1);
+                        border-right-color: rgba(45, 36, 22, 1);
+                        border-bottom-color: rgba(45, 36, 22, 1);
+                        border-left-color: rgba(45, 36, 22, 1);
+                        border-top-style: solid;
+                        border-right-style: solid;
+                        border-bottom-style: solid;
+                        border-left-style: solid;
+                        border-top-width: 2px;
+                        border-right-width: 2px;
+                        border-bottom-width: 2px;
+                        border-left-width: 2px;
+                        border-top-left-radius: 9999px;
+                        border-top-right-radius: 9999px;
+                        border-bottom-right-radius: 9999px;
+                        border-bottom-left-radius: 9999px;
+                      "
+                    >
+                      <iconify-icon
+                        id="32:47"
+                        style="
+                          line-height: 1.4;
+                          color: rgba(45, 36, 22, 1);
+                          font-size: 1.25rem;
+                        "
+                        icon="mdi:treasure-chest"
+                      ></iconify-icon>
+                    </div>
+                    <p
+                      id="32:48"
+                      style="
+                        line-height: 1.42857;
+                        color: rgba(45, 36, 22, 1);
+                        font-size: 0.875rem;
+                        font-weight: 700;
+                      "
+                    >
+                      Rescue Your Wallet
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="32:49"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1rem;
+                    column-gap: 1rem;
+                  "
+                >
+                  <form
+                    id="32:50"
+                    action="https://formspree.io/f/xyzlyljw"
+                    method="POST"
+                    style="display: flex; row-gap: 0; column-gap: 0"
+                  >
+                    <input
+                      id="32:51"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="Enter your email to join the crusade..."
+                      class="focus:border-[#C8A882] focus:outline-none focus:ring-2 focus:ring-[#C8A882]/30"
+                      style="background-color: rgba(255, 255, 255, 1);
+                        flex-grow: 1;
+                        flex-shrink: 1;
+                        flex-basis: 0%;
+                        padding-top: 0.75rem;
+                        padding-right: 1rem;
+                        padding-bottom: 0.75rem;
+                        padding-left: 1rem;
+                        color: rgba(45, 36, 22, 1);
+                        border-top-color: rgba(45, 36, 22, 1);
+                        border-right-color: rgba(45, 36, 22, 1);
+                        border-bottom-color: rgba(45, 36, 22, 1);
+                        border-left-color: rgba(45, 36, 22, 1);
+                        border-top-style: solid;
+                        border-right-style: solid;
+                        border-bottom-style: solid;
+                        border-left-style: solid;
+                        border-top-width: 2px;
+                        border-right-width: 0;
+                        border-bottom-width: 2px;
+                        border-left-width: 2px;
+                        border-top-left-radius: 0.25rem;
+                        border-bottom-left-radius: 0.25rem;
+                        font-weight: 400;"
+                    />
+                    <button
+                      id="32:52"
+                      type="submit"
+                      class="hover:shadow-[2px_2px_0px_rgba(45,36,22,1)] hover:translate-x-[2px] hover:translate-y-[2px]"
+                      style="background-color: rgba(232, 86, 60, 1);
+                        display: flex;
+                        align-items: center;
+                        row-gap: 0.5rem;
+                        column-gap: 0.5rem;
+                        padding-top: 0.75rem;
+                        padding-right: 1.5rem;
+                        padding-bottom: 0.75rem;
+                        padding-left: 1.5rem;
+                        color: rgba(255, 255, 255, 1);
+                        border-top-color: rgba(45, 36, 22, 1);
+                        border-right-color: rgba(45, 36, 22, 1);
+                        border-bottom-color: rgba(45, 36, 22, 1);
+                        border-left-color: rgba(45, 36, 22, 1);
+                        border-top-style: solid;
+                        border-right-style: solid;
+                        border-bottom-style: solid;
+                        border-left-style: solid;
+                        border-top-width: 2px;
+                        border-right-width: 2px;
+                        border-bottom-width: 2px;
+                        border-left-width: 2px;
+                        border-top-right-radius: 0.25rem;
+                        border-bottom-right-radius: 0.25rem;
+                        font-weight: 900;"
+                    >
+                      <iconify-icon
+                        id="32:53"
+                        style="line-height: 1.5; font-size: 1rem"
+                        icon="mdi:sword-cross"
+                      ></iconify-icon>
+                      <span id="32:54">JOIN THE ADVENTURE!</span>
+                    </button>
+                  </form>
+                  <div
+                    id="32:55"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      row-gap: 0.5rem;
+                      column-gap: 0.5rem;
+                      line-height: 1.42857;
+                      color: rgba(92, 74, 50, 1);
+                      font-size: 0.875rem;
+                    "
+                  >
+                    <iconify-icon
+                      id="32:56"
+                      style="
+                        line-height: 1.5;
+                        color: rgba(74, 124, 78, 1);
+                        font-size: 1rem;
+                      "
+                      icon="mdi:shield-check"
+                    ></iconify-icon>
+                    <span id="32:57"
+                      >Your email is secured in our impenetrable treasure vault.
+                      No spam bandits allowed!</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              id="32:58"
+              style="
+                background-color: rgba(45, 36, 22, 1);
+                max-width: 56rem;
+                margin-right: auto;
+                margin-left: auto;
+                padding-top: 2rem;
+                padding-right: 2rem;
+                padding-bottom: 2rem;
+                padding-left: 2rem;
+                box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  4px 4px 0 rgba(200, 168, 130, 1);
+                border-top-color: rgba(200, 168, 130, 1);
+                border-right-color: rgba(200, 168, 130, 1);
+                border-bottom-color: rgba(200, 168, 130, 1);
+                border-left-color: rgba(200, 168, 130, 1);
+                border-top-style: solid;
+                border-right-style: solid;
+                border-bottom-style: solid;
+                border-left-style: solid;
+                border-top-width: 3px;
+                border-right-width: 3px;
+                border-bottom-width: 3px;
+                border-left-width: 3px;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+                border-bottom-right-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+              "
+            >
+              <h3
+                id="32:59"
+                class="pf-2fded672-font-display"
+                style="
+                  text-align: center;
+                  margin-bottom: 1rem;
+                  line-height: 1.33333;
+                  color: rgba(245, 239, 230, 1);
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                "
+              >
+                "FOUNDING ADVENTURERS GET EXCLUSIVE REWARDS!"
+              </h3>
+              <p
+                id="32:60"
+                style="
+                  text-align: center;
+                  margin-bottom: 0.5rem;
+                  line-height: 1.5;
+                  color: rgba(229, 212, 184, 1);
+                  font-size: 1rem;
+                  font-weight: 600;
+                "
+              >
+                Recruits receive Charter Adventurer status with
+                special launch benefits
+              </p>
+              <p
+                id="32:61"
+                class="pf-2fded672-font-display"
+                style="
+                  text-align: center;
+                  line-height: 1.55556;
+                  color: rgba(200, 168, 130, 1);
+                  font-size: 1.125rem;
+                  font-weight: 700;
+                "
+              >
+                Early Access • Launch Pricing • Insider Updates ⚔️
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="32:62"
+        style="
+          background-color: rgba(255, 255, 255, 1);
+          padding-top: 4rem;
+          padding-right: 2rem;
+          padding-bottom: 4rem;
+          padding-left: 2rem;
+          border-top-color: rgba(45, 36, 22, 1);
+          border-right-color: rgba(45, 36, 22, 1);
+          border-bottom-color: rgba(45, 36, 22, 1);
+          border-left-color: rgba(45, 36, 22, 1);
+          border-top-style: solid;
+          border-top-width: 3px;
+        "
+      >
+        <div
+          id="32:63"
+          style="max-width: 72rem; margin-right: auto; margin-left: auto"
+        >
+          <div
+            id="32:64"
+            style="
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              column-gap: 2rem;
+              margin-bottom: 3rem;
+            "
+          >
+            <img
+              src="images/bill.png"
+              alt="Pogo"
+              style="
+                width: 200px;
+                height: auto;
+                border-radius: 0.5rem;
+                border: 4px solid rgba(45, 36, 22, 1);
+                box-shadow: 6px 6px 0 rgba(45, 36, 22, 1);
+              "
+            />
+            <div style="flex: 1; text-align: center">
+              <h2
+                id="32:65"
+                class="pf-2fded672-font-display"
+                style="
+                  margin-bottom: 1rem;
+                  line-height: 1.11111;
+                  color: rgba(45, 36, 22, 1);
+                  font-size: 2.25rem;
+                  font-weight: 700;
+                "
+              >
+                SNEAK PEEK: THE ADVENTURE AWAITS
+              </h2>
+              <p
+                id="32:66"
+                style="
+                  line-height: 1.55556;
+                  color: rgba(92, 74, 50, 1);
+                  font-size: 1.125rem;
+                  font-weight: 600;
+                "
+              >
+                Witness the AI-powered bill slashing prowess of Sir Bill and
+                Pogo!
+              </p>
+            </div>
+            <img
+              src="images/pogo.png"
+              alt="Pogo"
+              style="
+                width: 200px;
+                height: auto;
+                border-radius: 0.5rem;
+                border: 4px solid rgba(45, 36, 22, 1);
+                box-shadow: 6px 6px 0 rgba(45, 36, 22, 1);
+              "
+            />
+          </div>
+          <section id="40:65" style="background-color: rgba(255, 255, 255, 1); padding-top: 3rem; padding-right: 2rem; padding-bottom: 3rem; padding-left: 2rem; border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-top-width: 3px;">
+<div id="40:66" style="max-width: 72rem; margin-right: auto; margin-left: auto;">
+<!-- <div id="40:67" style="text-align: center; margin-bottom: 3rem;">
+<h2 id="40:68" class="pf-2fded672-font-display" style="margin-bottom: 1rem; line-height: 1.11111; color: rgba(45, 36, 22, 1); font-size: 2.25rem; font-weight: 700;">
+                        ITEMIZED VICTORIES - DEFEATED ENEMIES
+                    </h2>
+<p id="40:69" style="line-height: 1.55556; color: rgba(92, 74, 50, 1); font-size: 1.125rem; font-weight: 600;">
+                        Each billing bandit has been identified, cornered, and eliminated by Sir William's expert analysis
+                    </p>
+</div> -->
+<div id="40:34" style="background-color: rgba(255, 255, 255, 1); position: relative; margin-bottom: 3rem; padding-top: 2rem; padding-right: 2rem; padding-bottom: 2rem; padding-left: 2rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 6px 6px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
+<div id="40:35" style="background-color: rgba(212, 145, 47, 1); position: absolute; top: -1rem; left: -1rem; rotate: -5deg; padding-top: 0.25rem; padding-right: 0.75rem; padding-bottom: 0.25rem; padding-left: 0.75rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 3px 3px 0 rgba(45, 36, 22, 1); line-height: 1.42857; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 0.875rem; font-weight: 900;">
+<span id="40:36">TREASURE RECOVERED</span>
 </div>
-<div id="32:67" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2rem; column-gap: 2rem; margin-bottom: 4rem;">
-<div id="32:68" style="background-color: rgba(255, 249, 240, 1); padding-top: 1.5rem; padding-right: 1.5rem; padding-bottom: 1.5rem; padding-left: 1.5rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 4px 4px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
-<div id="32:69" style="position: relative; margin-bottom: 1rem;">
-<div id="32:70" style="background-color: rgba(232, 86, 60, 1); display: flex; position: absolute; top: -0.5rem; right: -0.5rem; rotate: 5deg; justify-content: center; align-items: center; padding-top: 0.25rem; padding-right: 0.75rem; padding-bottom: 0.25rem; padding-left: 0.75rem; line-height: 1.33333; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 0.75rem; font-weight: 900;">
-<span id="32:71">COMING SOON</span>
+<div id="40:37" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 2rem; column-gap: 2rem; margin-bottom: 2rem;">
+<div id="40:38" style="background-color: rgba(232, 86, 60, 1); text-align: center; transform: NaN; rotate: -1deg; padding-top: 1.5rem; padding-right: 1.5rem; padding-bottom: 1.5rem; padding-left: 1.5rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 4px 4px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
+<div id="40:39" style="text-transform: uppercase; letter-spacing: 0.025em; margin-bottom: 0.5rem; line-height: 1.42857; color: color-mix( in oklab , #fff 90% , transparent ); font-size: 0.875rem; font-weight: 600;">TOTAL RESCUED</div>
+<div id="40:40" class="pf-2fded672-font-display" style="margin-bottom: 0.25rem; line-height: 1; color: rgba(255, 255, 255, 1); font-size: 3rem; font-weight: 900;">$847</div>
+<div id="40:41" style="line-height: 1.5; color: rgba(255, 255, 255, 1); font-size: 1rem; font-weight: 700;">IN OVERCHARGES!</div>
 </div>
-<img id="32:72" style="width: 100%; height: 12rem; object-fit: cover; border-top-color: rgba(200, 168, 130, 1); border-right-color: rgba(200, 168, 130, 1); border-bottom-color: rgba(200, 168, 130, 1); border-left-color: rgba(200, 168, 130, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem;" alt="Sir Bill Whacker platform interface showing medical bill analysis with highlighted overcharges and AI-powered detection results, adventure-themed dashboard design" src="https://static.paraflowcontent.com/public/resource/image/a9839169-33a0-43a3-a9b1-bc046634f41e.jpeg">
+<div id="40:42" style="background-color: rgba(74, 124, 78, 1); text-align: center; transform: NaN; rotate: 2deg; padding-top: 1.5rem; padding-right: 1.5rem; padding-bottom: 1.5rem; padding-left: 1.5rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 4px 4px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
+<div id="40:43" style="text-transform: uppercase; letter-spacing: 0.025em; margin-bottom: 0.5rem; line-height: 1.42857; color: color-mix( in oklab , #fff 90% , transparent ); font-size: 0.875rem; font-weight: 600;">VICTORY CERTAINTY</div>
+<div id="40:44" class="pf-2fded672-font-display" style="margin-bottom: 0.25rem; line-height: 1; color: rgba(255, 255, 255, 1); font-size: 3rem; font-weight: 900;">97%</div>
+<div id="40:45" style="line-height: 1.5; color: rgba(255, 255, 255, 1); font-size: 1rem; font-weight: 700;">SUCCESS RATE!</div>
 </div>
-<h3 id="32:73" style="margin-bottom: 0.5rem; line-height: 1.4; color: rgba(45, 36, 22, 1); font-size: 1.25rem; font-weight: 700;">AI-Powered Bill Analysis</h3>
-<p id="32:74" style="line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem;">Watch as Sir Bill's trained AI warriors scan every line item with expedition precision, hunting down overcharges like a bloodhound!</p>
-</div>
-<div id="32:75" style="background-color: rgba(255, 249, 240, 1); padding-top: 1.5rem; padding-right: 1.5rem; padding-bottom: 1.5rem; padding-left: 1.5rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 4px 4px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
-<div id="32:76" style="position: relative; margin-bottom: 1rem;">
-<div id="32:77" style="background-color: rgba(212, 145, 47, 1); display: flex; position: absolute; top: -0.5rem; right: -0.5rem; rotate: -3deg; justify-content: center; align-items: center; padding-top: 0.25rem; padding-right: 0.75rem; padding-bottom: 0.25rem; padding-left: 0.75rem; line-height: 1.33333; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 0.75rem; font-weight: 900;">
-<span id="32:78">PREVIEW</span>
-</div>
-<img id="32:79" style="width: 100%; height: 12rem; object-fit: cover; border-top-color: rgba(200, 168, 130, 1); border-right-color: rgba(200, 168, 130, 1); border-bottom-color: rgba(200, 168, 130, 1); border-left-color: rgba(200, 168, 130, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem;" alt="Victory report showing rescued dollars and detailed breakdown of eliminated charges, treasure chest full of saved money, adventure conquest results" src="https://static.paraflowcontent.com/public/resource/image/240f2359-d94d-4e93-9094-e1dad7153a84.jpeg">
-</div>
-<h3 id="32:80" style="margin-bottom: 0.5rem; line-height: 1.4; color: rgba(45, 36, 22, 1); font-size: 1.25rem; font-weight: 700;">Victory Report</h3>
-<p id="32:81" style="line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem;">Celebrate your treasure rescue with detailed conquest reports showing exactly how much Sir Bill saved from the billing bandits!</p>
+<div id="40:46" style="background-color: rgba(212, 145, 47, 1); text-align: center; transform: NaN; rotate: -2deg; padding-top: 1.5rem; padding-right: 1.5rem; padding-bottom: 1.5rem; padding-left: 1.5rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 4px 4px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
+<div id="40:47" style="text-transform: uppercase; letter-spacing: 0.025em; margin-bottom: 0.5rem; line-height: 1.42857; color: color-mix( in oklab , #fff 90% , transparent ); font-size: 0.875rem; font-weight: 600;">BANDITS DEFEATED</div>
+<div id="40:48" class="pf-2fded672-font-display" style="margin-bottom: 0.25rem; line-height: 1; color: rgba(255, 255, 255, 1); font-size: 3rem; font-weight: 900;">4</div>
+<div id="40:49" style="line-height: 1.5; color: rgba(255, 255, 255, 1); font-size: 1rem; font-weight: 700;">OVERCHARGES!</div>
 </div>
 </div>
-<div id="32:82" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2rem; column-gap: 2rem; margin-bottom: 3rem;">
-<div id="32:83" style="background-color: rgba(255, 249, 240, 1); padding-top: 1.5rem; padding-right: 1.5rem; padding-bottom: 1.5rem; padding-left: 1.5rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 4px 4px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
-<div id="32:84" style="display: flex; align-items: center; row-gap: 1rem; column-gap: 1rem; margin-bottom: 1rem;">
-<img id="32:85" style="width: 3rem; height: 3rem; object-fit: cover; border-top-color: rgba(200, 168, 130, 1); border-right-color: rgba(200, 168, 130, 1); border-bottom-color: rgba(200, 168, 130, 1); border-left-color: rgba(200, 168, 130, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 9999px; border-top-right-radius: 9999px; border-bottom-right-radius: 9999px; border-bottom-left-radius: 9999px;" alt="Future adventurer Lisa K - excited healthcare professional smiling confidently" src="https://static.paraflowcontent.com/public/resource/image/5c4922e8-d874-467d-b69d-e54a73323e8d.jpeg">
-<div id="32:86">
-<h4 id="32:87" style="line-height: 1.5; color: rgba(45, 36, 22, 1); font-size: 1rem; font-weight: 700;">Lisa K., Future Adventurer</h4>
-<div id="32:88" style="display: flex; align-items: center; row-gap: 0.25rem; column-gap: 0.25rem;">
-<iconify-icon id="32:89" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
-<iconify-icon id="32:90" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
-<iconify-icon id="32:91" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
-<iconify-icon id="32:92" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
-<iconify-icon id="32:93" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
+
+<div id="40:50" style="background-color: rgba(255, 249, 240, 1); text-align: left; padding-top: 1.5rem; padding-right: 1.5rem; padding-bottom: 1.5rem; padding-left: 1.5rem; border-top-color: rgba(200, 168, 130, 1); border-right-color: rgba(200, 168, 130, 1); border-bottom-color: rgba(200, 168, 130, 1); border-left-color: rgba(200, 168, 130, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem;">
+<h3 id="40:51" class="pf-2fded672-font-display" style="margin-bottom: 1rem; line-height: 1.4; color: rgba(45, 36, 22, 1); font-size: 1.25rem; font-weight: 700;">EXPEDITION BRIEFING</h3>
+<div id="40:52" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.5rem; column-gap: 1.5rem;">
+<div id="40:53">
+<p id="40:54" style="margin-bottom: 0.25rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Medical Provider:</p>
+<p id="40:55" style="line-height: 1.5; color: rgba(45, 36, 22, 1); font-size: 1rem;">Central City Medical Center</p>
+</div>
+<div id="40:56">
+<p id="40:57" style="margin-bottom: 0.25rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Service Date:</p>
+<p id="40:58" style="line-height: 1.5; color: rgba(45, 36, 22, 1); font-size: 1rem;">March 15, 2024</p>
+</div>
+<div id="40:59">
+<p id="40:60" style="margin-bottom: 0.25rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Original Bill Amount:</p>
+<p id="40:61" style="line-height: 1.55556; color: rgba(139, 58, 46, 1); font-size: 1.125rem; font-weight: 700;">$2,347.82</p>
+</div>
+<div id="40:62">
+<p id="40:63" style="margin-bottom: 0.25rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Righteous Amount:</p>
+<p id="40:64" style="line-height: 1.55556; color: rgba(74, 124, 78, 1); font-size: 1.125rem; font-weight: 700;">$1,500.82</p>
 </div>
 </div>
-<div id="32:94" style="background-color: rgba(74, 124, 78, 1); display: flex; justify-content: center; align-items: center; margin-left: auto; padding-top: 0.25rem; padding-right: 0.75rem; padding-bottom: 0.25rem; padding-left: 0.75rem; line-height: 1.42857; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 0.875rem; font-weight: 900;">
-<span id="32:95">READY!</span>
 </div>
 </div>
-<p id="32:96" style="line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-style: italic;">
-                            "I can't wait to see Sir Bill Whacker tear through my hospital bills! After getting blindsided by a $3,000 'facility fee,' I need a champion who fights for working families. Sign me up for this crusade!"
-                        </p>
+
+<div id="40:70" style="display: grid; row-gap: 1.5rem; column-gap: 1.5rem; margin-bottom: 3rem;">
+
+<div id="40:71" style="background-color: rgba(255, 249, 240, 1); padding-top: 1.5rem; padding-right: 1.5rem; padding-bottom: 1.5rem; padding-left: 1.5rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 4px 4px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
+<div id="40:72" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+<div id="40:73" style="display: flex; align-items: center; row-gap: 1rem; column-gap: 1rem;">
+<div id="40:74" style="background-color: rgba(232, 86, 60, 1); rotate: -2deg; padding-top: 0.25rem; padding-right: 0.75rem; padding-bottom: 0.25rem; padding-left: 0.75rem; line-height: 1.42857; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 0.875rem; font-weight: 900;">
+<span id="40:75">ELIMINATED!</span>
 </div>
-<div id="32:97" style="background-color: rgba(255, 249, 240, 1); padding-top: 1.5rem; padding-right: 1.5rem; padding-bottom: 1.5rem; padding-left: 1.5rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 4px 4px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
-<div id="32:98" style="display: flex; align-items: center; row-gap: 1rem; column-gap: 1rem; margin-bottom: 1rem;">
-<img id="32:99" style="width: 3rem; height: 3rem; object-fit: cover; border-top-color: rgba(200, 168, 130, 1); border-right-color: rgba(200, 168, 130, 1); border-bottom-color: rgba(200, 168, 130, 1); border-left-color: rgba(200, 168, 130, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 9999px; border-top-right-radius: 9999px; border-bottom-right-radius: 9999px; border-bottom-left-radius: 9999px;" alt="Future adventurer Mike R - determined family man ready for battle against medical bills" src="https://static.paraflowcontent.com/public/resource/image/65a3c1ee-f9c3-4885-a5bb-43bcac447d7d.jpeg">
-<div id="32:100">
-<h4 id="32:101" style="line-height: 1.5; color: rgba(45, 36, 22, 1); font-size: 1rem; font-weight: 700;">Mike R., Future Recruit</h4>
-<div id="32:102" style="display: flex; align-items: center; row-gap: 0.25rem; column-gap: 0.25rem;">
-<iconify-icon id="32:103" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
-<iconify-icon id="32:104" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
-<iconify-icon id="32:105" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
-<iconify-icon id="32:106" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
-<iconify-icon id="32:107" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
+<h3 id="40:76" style="line-height: 1.4; color: rgba(45, 36, 22, 1); font-size: 1.25rem; font-weight: 700;">Duplicate Laboratory Charge</h3>
 </div>
-</div>
-<div id="32:108" style="background-color: rgba(232, 86, 60, 1); display: flex; justify-content: center; align-items: center; margin-left: auto; padding-top: 0.25rem; padding-right: 0.75rem; padding-bottom: 0.25rem; padding-left: 0.75rem; line-height: 1.42857; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 0.875rem; font-weight: 900;">
-<span id="32:109">ENLISTED!</span>
+<div id="40:77" style="text-align: right;">
+<div id="40:78" style="line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Savings Rescued:</div>
+<div id="40:79" class="pf-2fded672-font-display" style="line-height: 1.33333; color: rgba(232, 86, 60, 1); font-size: 1.5rem; font-weight: 900;">$347.00</div>
 </div>
 </div>
-<p id="32:110" style="line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-style: italic;">
-                            "My family needs a hero like Sir Bill! Medical bills are the biggest villain in our budget. I'm ready to join this rebellion and finally fight back against these billing bandits!"
-                        </p>
+<div id="40:80" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.5rem; column-gap: 1.5rem;">
+<div id="40:81">
+<p id="40:82" style="margin-bottom: 0.5rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Battle Intelligence:</p>
+<p id="40:83" style="line-height: 1.5; color: rgba(45, 36, 22, 1); font-size: 1rem;">Blood panel (CPT 80053) was charged twice on the same date. This sneaky bandit tried to double-dip your treasure chest!</p>
+</div>
+<div id="40:84">
+<p id="40:85" style="margin-bottom: 0.5rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Target Difficulty:</p>
+<div id="40:86" style="display: flex; align-items: center; row-gap: 0.5rem; column-gap: 0.5rem;">
+<div id="40:87" style="display: flex; align-items: center; row-gap: 0.25rem; column-gap: 0.25rem;">
+<iconify-icon id="40:88" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
+<iconify-icon id="40:89" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
+<iconify-icon id="40:90" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
+<iconify-icon id="40:91" style="line-height: 1.42857; color: rgba(139, 115, 85, 1); font-size: 0.875rem;" icon="mdi:star-outline"></iconify-icon>
+<iconify-icon id="40:92" style="line-height: 1.42857; color: rgba(139, 115, 85, 1); font-size: 0.875rem;" icon="mdi:star-outline"></iconify-icon>
+</div>
+<span id="40:93" style="line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Medium Challenge</span>
 </div>
 </div>
-<div id="32:111" style="text-align: center;">
-<div id="32:112" style="background-color: rgba(200, 168, 130, 1); margin-bottom: 1.5rem; padding-top: 2rem; padding-right: 2rem; padding-bottom: 2rem; padding-left: 2rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 6px 6px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
-<h3 id="32:113" class="pf-2fded672-font-display" style="margin-bottom: 1rem; line-height: 1.2; color: rgba(45, 36, 22, 1); font-size: 1.875rem; font-weight: 700;">
-                            THE CRUSADE LAUNCHES SOON!
-                        </h3>
-<p id="32:114" style="margin-bottom: 1.5rem; line-height: 1.55556; color: rgba(45, 36, 22, 1); font-size: 1.125rem; font-weight: 600;">
-                            Sir Bill Whacker is sharpening his analytical swords and calibrating his AI-powered detection arsenal. Early recruits get first access to the most epic bill-whacking adventure ever!
-                        </p>
-<button id="32:115" class="hover:shadow-[3px_3px_0px_rgba(45,36,22,1)] hover:translate-x-[3px] hover:translate-y-[3px]" style="background-color: rgba(232, 86, 60, 1); display: flex; align-items: center; row-gap: 0.75rem; column-gap: 0.75rem; margin-right: auto; margin-left: auto; padding-top: 1rem; padding-right: 2rem; padding-bottom: 1rem; padding-left: 2rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 6px 6px 0 rgba(45, 36, 22, 1); line-height: 1.4; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem; font-size: 1.25rem; font-weight: 900;">
-<iconify-icon id="32:116" style="line-height: 1.4; font-size: 1.25rem;" icon="mdi:sword"></iconify-icon>
-<span id="32:117">ENLIST NOW - START WHACKING!</span>
-</button>
 </div>
-<div id="32:118" style="display: flex; justify-content: center; align-items: center; row-gap: 2rem; column-gap: 2rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem;">
-<div id="32:119" style="display: flex; align-items: center; row-gap: 0.5rem; column-gap: 0.5rem;">
-<iconify-icon id="32:120" style="line-height: 1.5; color: rgba(74, 124, 78, 1); font-size: 1rem;" icon="mdi:shield-check"></iconify-icon>
-<span id="32:121" style="font-weight: 600;">Certified Bill Whacker</span>
 </div>
-<div id="32:122" style="display: flex; align-items: center; row-gap: 0.5rem; column-gap: 0.5rem;">
-<iconify-icon id="32:123" style="line-height: 1.5; color: rgba(212, 145, 47, 1); font-size: 1rem;" icon="mdi:clock-fast"></iconify-icon>
-<span id="32:124" style="font-weight: 600;">3-Minute Analysis</span>
+
+<div id="40:94" style="background-color: rgba(255, 249, 240, 1); padding-top: 1.5rem; padding-right: 1.5rem; padding-bottom: 1.5rem; padding-left: 1.5rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 4px 4px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
+<div id="40:95" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+<div id="40:96" style="display: flex; align-items: center; row-gap: 1rem; column-gap: 1rem;">
+<div id="40:97" style="background-color: rgba(74, 124, 78, 1); rotate: 2deg; padding-top: 0.25rem; padding-right: 0.75rem; padding-bottom: 0.25rem; padding-left: 0.75rem; line-height: 1.42857; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 0.875rem; font-weight: 900;">
+<span id="40:98">SLASHED!</span>
 </div>
-<div id="32:125" style="display: flex; align-items: center; row-gap: 0.5rem; column-gap: 0.5rem;">
-<iconify-icon id="32:126" style="line-height: 1.5; color: rgba(74, 124, 124, 1); font-size: 1rem;" icon="mdi:bank"></iconify-icon>
-<span id="32:127" style="font-weight: 600;">Bank-Grade Security</span>
+<h3 id="40:99" style="line-height: 1.4; color: rgba(45, 36, 22, 1); font-size: 1.25rem; font-weight: 700;">Phantom Facility Fee</h3>
 </div>
-<div id="32:128" style="display: flex; align-items: center; row-gap: 0.5rem; column-gap: 0.5rem;">
-<iconify-icon id="32:129" style="line-height: 1.5; color: rgba(232, 86, 60, 1); font-size: 1rem;" icon="mdi:trophy"></iconify-icon>
-<span id="32:130" style="font-weight: 600;">Victory Guaranteed</span>
+<div id="40:100" style="text-align: right;">
+<div id="40:101" style="line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Savings Rescued:</div>
+<div id="40:102" class="pf-2fded672-font-display" style="line-height: 1.33333; color: rgba(232, 86, 60, 1); font-size: 1.5rem; font-weight: 900;">$275.00</div>
+</div>
+</div>
+<div id="40:103" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.5rem; column-gap: 1.5rem;">
+<div id="40:104">
+<p id="40:105" style="margin-bottom: 0.5rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Battle Intelligence:</p>
+<p id="40:106" style="line-height: 1.5; color: rgba(45, 36, 22, 1); font-size: 1rem;">Mysterious "facility usage fee" with no medical justification. This shadow bandit lurks in the billing department's dark corners!</p>
+</div>
+<div id="40:107">
+<p id="40:108" style="margin-bottom: 0.5rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Target Difficulty:</p>
+<div id="40:109" style="display: flex; align-items: center; row-gap: 0.5rem; column-gap: 0.5rem;">
+<div id="40:110" style="display: flex; align-items: center; row-gap: 0.25rem; column-gap: 0.25rem;">
+<iconify-icon id="40:111" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
+<iconify-icon id="40:112" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
+<iconify-icon id="40:113" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
+<iconify-icon id="40:114" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
+<iconify-icon id="40:115" style="line-height: 1.42857; color: rgba(139, 115, 85, 1); font-size: 0.875rem;" icon="mdi:star-outline"></iconify-icon>
+</div>
+<span id="40:116" style="line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">High Challenge</span>
+</div>
+</div>
+</div>
+</div>
+
+<div id="40:117" style="background-color: rgba(255, 249, 240, 1); padding-top: 1.5rem; padding-right: 1.5rem; padding-bottom: 1.5rem; padding-left: 1.5rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 4px 4px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
+<div id="40:118" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+<div id="40:119" style="display: flex; align-items: center; row-gap: 1rem; column-gap: 1rem;">
+<div id="40:120" style="background-color: rgba(212, 145, 47, 1); rotate: -1deg; padding-top: 0.25rem; padding-right: 0.75rem; padding-bottom: 0.25rem; padding-left: 0.75rem; line-height: 1.42857; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 0.875rem; font-weight: 900;">
+<span id="40:121">DESTROYED!</span>
+</div>
+<h3 id="40:122" style="line-height: 1.4; color: rgba(45, 36, 22, 1); font-size: 1.25rem; font-weight: 700;">Inflated Supply Costs</h3>
+</div>
+<div id="40:123" style="text-align: right;">
+<div id="40:124" style="line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Savings Rescued:</div>
+<div id="40:125" class="pf-2fded672-font-display" style="line-height: 1.33333; color: rgba(232, 86, 60, 1); font-size: 1.5rem; font-weight: 900;">$150.00</div>
+</div>
+</div>
+<div id="40:126" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.5rem; column-gap: 1.5rem;">
+<div id="40:127">
+<p id="40:128" style="margin-bottom: 0.5rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Battle Intelligence:</p>
+<p id="40:129" style="line-height: 1.5; color: rgba(45, 36, 22, 1); font-size: 1rem;">Basic bandages and gauze charged at 400% markup. These supply bandits prey on the wounded and vulnerable!</p>
+</div>
+<div id="40:130">
+<p id="40:131" style="margin-bottom: 0.5rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Target Difficulty:</p>
+<div id="40:132" style="display: flex; align-items: center; row-gap: 0.5rem; column-gap: 0.5rem;">
+<div id="40:133" style="display: flex; align-items: center; row-gap: 0.25rem; column-gap: 0.25rem;">
+<iconify-icon id="40:134" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
+<iconify-icon id="40:135" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
+<iconify-icon id="40:136" style="line-height: 1.42857; color: rgba(139, 115, 85, 1); font-size: 0.875rem;" icon="mdi:star-outline"></iconify-icon>
+<iconify-icon id="40:137" style="line-height: 1.42857; color: rgba(139, 115, 85, 1); font-size: 0.875rem;" icon="mdi:star-outline"></iconify-icon>
+<iconify-icon id="40:138" style="line-height: 1.42857; color: rgba(139, 115, 85, 1); font-size: 0.875rem;" icon="mdi:star-outline"></iconify-icon>
+</div>
+<span id="40:139" style="line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Easy Challenge</span>
+</div>
+</div>
+</div>
+</div>
+
+<div id="40:140" style="background-color: rgba(255, 249, 240, 1); padding-top: 1.5rem; padding-right: 1.5rem; padding-bottom: 1.5rem; padding-left: 1.5rem; box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0), 4px 4px 0 rgba(45, 36, 22, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; border-bottom-right-radius: 0.5rem; border-bottom-left-radius: 0.5rem;">
+<div id="40:141" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+<div id="40:142" style="display: flex; align-items: center; row-gap: 1rem; column-gap: 1rem;">
+<div id="40:143" style="background-color: rgba(74, 124, 124, 1); rotate: 1deg; padding-top: 0.25rem; padding-right: 0.75rem; padding-bottom: 0.25rem; padding-left: 0.75rem; line-height: 1.42857; color: rgba(255, 255, 255, 1); border-top-color: rgba(45, 36, 22, 1); border-right-color: rgba(45, 36, 22, 1); border-bottom-color: rgba(45, 36, 22, 1); border-left-color: rgba(45, 36, 22, 1); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 2px; border-right-width: 2px; border-bottom-width: 2px; border-left-width: 2px; border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; font-size: 0.875rem; font-weight: 900;">
+<span id="40:144">VANQUISHED!</span>
+</div>
+<h3 id="40:145" style="line-height: 1.4; color: rgba(45, 36, 22, 1); font-size: 1.25rem; font-weight: 700;">Incorrect Procedure Code</h3>
+</div>
+<div id="40:146" style="text-align: right;">
+<div id="40:147" style="line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Savings Rescued:</div>
+<div id="40:148" class="pf-2fded672-font-display" style="line-height: 1.33333; color: rgba(232, 86, 60, 1); font-size: 1.5rem; font-weight: 900;">$75.00</div>
+</div>
+</div>
+<div id="40:149" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.5rem; column-gap: 1.5rem;">
+<div id="40:150">
+<p id="40:151" style="margin-bottom: 0.5rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Battle Intelligence:</p>
+<p id="40:152" style="line-height: 1.5; color: rgba(45, 36, 22, 1); font-size: 1rem;">Simple consultation coded as complex procedure. This shape-shifting bandit disguises basic services as premium adventures!</p>
+</div>
+<div id="40:153">
+<p id="40:154" style="margin-bottom: 0.5rem; line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Target Difficulty:</p>
+<div id="40:155" style="display: flex; align-items: center; row-gap: 0.5rem; column-gap: 0.5rem;">
+<div id="40:156" style="display: flex; align-items: center; row-gap: 0.25rem; column-gap: 0.25rem;">
+<iconify-icon id="40:157" style="line-height: 1.42857; color: rgba(212, 145, 47, 1); font-size: 0.875rem;" icon="mdi:star"></iconify-icon>
+<iconify-icon id="40:158" style="line-height: 1.42857; color: rgba(139, 115, 85, 1); font-size: 0.875rem;" icon="mdi:star-outline"></iconify-icon>
+<iconify-icon id="40:159" style="line-height: 1.42857; color: rgba(139, 115, 85, 1); font-size: 0.875rem;" icon="mdi:star-outline"></iconify-icon>
+<iconify-icon id="40:160" style="line-height: 1.42857; color: rgba(139, 115, 85, 1); font-size: 0.875rem;" icon="mdi:star-outline"></iconify-icon>
+<iconify-icon id="40:161" style="line-height: 1.42857; color: rgba(139, 115, 85, 1); font-size: 0.875rem;" icon="mdi:star-outline"></iconify-icon>
+</div>
+<span id="40:162" style="line-height: 1.42857; color: rgba(92, 74, 50, 1); font-size: 0.875rem; font-weight: 600;">Novice Challenge</span>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 </section>
-</main>
-
-
-
-
-    
-    </body></html>
+          <!-- <div
+            id="32:67"
+            style="
+              display: grid;
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              row-gap: 2rem;
+              column-gap: 2rem;
+              margin-bottom: 4rem;
+            "
+          >
+            <div
+              id="32:68"
+              style="
+                background-color: rgba(255, 249, 240, 1);
+                padding-top: 1.5rem;
+                padding-right: 1.5rem;
+                padding-bottom: 1.5rem;
+                padding-left: 1.5rem;
+                box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  4px 4px 0 rgba(45, 36, 22, 1);
+                border-top-color: rgba(45, 36, 22, 1);
+                border-right-color: rgba(45, 36, 22, 1);
+                border-bottom-color: rgba(45, 36, 22, 1);
+                border-left-color: rgba(45, 36, 22, 1);
+                border-top-style: solid;
+                border-right-style: solid;
+                border-bottom-style: solid;
+                border-left-style: solid;
+                border-top-width: 3px;
+                border-right-width: 3px;
+                border-bottom-width: 3px;
+                border-left-width: 3px;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+                border-bottom-right-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+              "
+            >
+              <div id="32:69" style="position: relative; margin-bottom: 1rem">
+                <div
+                  id="32:70"
+                  style="
+                    background-color: rgba(232, 86, 60, 1);
+                    display: flex;
+                    position: absolute;
+                    top: -0.5rem;
+                    right: -0.5rem;
+                    rotate: 5deg;
+                    justify-content: center;
+                    align-items: center;
+                    padding-top: 0.25rem;
+                    padding-right: 0.75rem;
+                    padding-bottom: 0.25rem;
+                    padding-left: 0.75rem;
+                    line-height: 1.33333;
+                    color: rgba(255, 255, 255, 1);
+                    border-top-color: rgba(45, 36, 22, 1);
+                    border-right-color: rgba(45, 36, 22, 1);
+                    border-bottom-color: rgba(45, 36, 22, 1);
+                    border-left-color: rgba(45, 36, 22, 1);
+                    border-top-style: solid;
+                    border-right-style: solid;
+                    border-bottom-style: solid;
+                    border-left-style: solid;
+                    border-top-width: 2px;
+                    border-right-width: 2px;
+                    border-bottom-width: 2px;
+                    border-left-width: 2px;
+                    border-top-left-radius: 0.25rem;
+                    border-top-right-radius: 0.25rem;
+                    border-bottom-right-radius: 0.25rem;
+                    border-bottom-left-radius: 0.25rem;
+                    font-size: 0.75rem;
+                    font-weight: 900;
+                  "
+                >
+                  <span id="32:71">COMING SOON</span>
+                </div>
+                <img
+                  id="32:72"
+                  style="
+                    width: 100%;
+                    height: 12rem;
+                    object-fit: cover;
+                    border-top-color: rgba(200, 168, 130, 1);
+                    border-right-color: rgba(200, 168, 130, 1);
+                    border-bottom-color: rgba(200, 168, 130, 1);
+                    border-left-color: rgba(200, 168, 130, 1);
+                    border-top-style: solid;
+                    border-right-style: solid;
+                    border-bottom-style: solid;
+                    border-left-style: solid;
+                    border-top-width: 2px;
+                    border-right-width: 2px;
+                    border-bottom-width: 2px;
+                    border-left-width: 2px;
+                    border-top-left-radius: 0.25rem;
+                    border-top-right-radius: 0.25rem;
+                    border-bottom-right-radius: 0.25rem;
+                    border-bottom-left-radius: 0.25rem;
+                  "
+                  alt="Sir Bill Whacker platform interface showing medical bill analysis with highlighted overcharges and AI-powered detection results, adventure-themed dashboard design"
+                  src="https://static.paraflowcontent.com/public/resource/image/a9839169-33a0-43a3-a9b1-bc046634f41e.jpeg"
+                />
+              </div>
+              <h3
+                id="32:73"
+                style="
+                  margin-bottom: 0.5rem;
+                  line-height: 1.4;
+                  color: rgba(45, 36, 22, 1);
+                  font-size: 1.25rem;
+                  font-weight: 700;
+                "
+              >
+                AI-Powered Bill Analysis
+              </h3>
+              <p
+                id="32:74"
+                style="
+                  line-height: 1.42857;
+                  color: rgba(92, 74, 50, 1);
+                  font-size: 0.875rem;
+                "
+              >
+                Watch as Sir Bill's trained AI warriors scan every line item
+                with expedition precision, hunting down overcharges like a
+                bloodhound!
+              </p>
+            </div>
+            <div
+              id="32:75"
+              style="
+                background-color: rgba(255, 249, 240, 1);
+                padding-top: 1.5rem;
+                padding-right: 1.5rem;
+                padding-bottom: 1.5rem;
+                padding-left: 1.5rem;
+                box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  4px 4px 0 rgba(45, 36, 22, 1);
+                border-top-color: rgba(45, 36, 22, 1);
+                border-right-color: rgba(45, 36, 22, 1);
+                border-bottom-color: rgba(45, 36, 22, 1);
+                border-left-color: rgba(45, 36, 22, 1);
+                border-top-style: solid;
+                border-right-style: solid;
+                border-bottom-style: solid;
+                border-left-style: solid;
+                border-top-width: 3px;
+                border-right-width: 3px;
+                border-bottom-width: 3px;
+                border-left-width: 3px;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+                border-bottom-right-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+              "
+            >
+              <div id="32:76" style="position: relative; margin-bottom: 1rem">
+                <div
+                  id="32:77"
+                  style="
+                    background-color: rgba(212, 145, 47, 1);
+                    display: flex;
+                    position: absolute;
+                    top: -0.5rem;
+                    right: -0.5rem;
+                    rotate: -3deg;
+                    justify-content: center;
+                    align-items: center;
+                    padding-top: 0.25rem;
+                    padding-right: 0.75rem;
+                    padding-bottom: 0.25rem;
+                    padding-left: 0.75rem;
+                    line-height: 1.33333;
+                    color: rgba(255, 255, 255, 1);
+                    border-top-color: rgba(45, 36, 22, 1);
+                    border-right-color: rgba(45, 36, 22, 1);
+                    border-bottom-color: rgba(45, 36, 22, 1);
+                    border-left-color: rgba(45, 36, 22, 1);
+                    border-top-style: solid;
+                    border-right-style: solid;
+                    border-bottom-style: solid;
+                    border-left-style: solid;
+                    border-top-width: 2px;
+                    border-right-width: 2px;
+                    border-bottom-width: 2px;
+                    border-left-width: 2px;
+                    border-top-left-radius: 0.25rem;
+                    border-top-right-radius: 0.25rem;
+                    border-bottom-right-radius: 0.25rem;
+                    border-bottom-left-radius: 0.25rem;
+                    font-size: 0.75rem;
+                    font-weight: 900;
+                  "
+                >
+                  <span id="32:78">PREVIEW</span>
+                </div>
+                <img
+                  id="32:79"
+                  style="
+                    width: 100%;
+                    height: 12rem;
+                    object-fit: cover;
+                    border-top-color: rgba(200, 168, 130, 1);
+                    border-right-color: rgba(200, 168, 130, 1);
+                    border-bottom-color: rgba(200, 168, 130, 1);
+                    border-left-color: rgba(200, 168, 130, 1);
+                    border-top-style: solid;
+                    border-right-style: solid;
+                    border-bottom-style: solid;
+                    border-left-style: solid;
+                    border-top-width: 2px;
+                    border-right-width: 2px;
+                    border-bottom-width: 2px;
+                    border-left-width: 2px;
+                    border-top-left-radius: 0.25rem;
+                    border-top-right-radius: 0.25rem;
+                    border-bottom-right-radius: 0.25rem;
+                    border-bottom-left-radius: 0.25rem;
+                  "
+                  alt="Victory report showing rescued dollars and detailed breakdown of eliminated charges, treasure chest full of saved money, adventure conquest results"
+                  src="https://static.paraflowcontent.com/public/resource/image/240f2359-d94d-4e93-9094-e1dad7153a84.jpeg"
+                />
+              </div>
+              <h3
+                id="32:80"
+                style="
+                  margin-bottom: 0.5rem;
+                  line-height: 1.4;
+                  color: rgba(45, 36, 22, 1);
+                  font-size: 1.25rem;
+                  font-weight: 700;
+                "
+              >
+                Victory Report
+              </h3>
+              <p
+                id="32:81"
+                style="
+                  line-height: 1.42857;
+                  color: rgba(92, 74, 50, 1);
+                  font-size: 0.875rem;
+                "
+              >
+                Celebrate your treasure rescue with detailed conquest reports
+                showing exactly how much Sir Bill saved from the billing
+                bandits!
+              </p>
+            </div>
+          </div> -->
+          <!-- <div
+            id="32:82"
+            style="
+              display: grid;
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              row-gap: 2rem;
+              column-gap: 2rem;
+              margin-bottom: 3rem;
+            "
+          >
+            <div
+              id="32:83"
+              style="
+                background-color: rgba(255, 249, 240, 1);
+                padding-top: 1.5rem;
+                padding-right: 1.5rem;
+                padding-bottom: 1.5rem;
+                padding-left: 1.5rem;
+                box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  4px 4px 0 rgba(45, 36, 22, 1);
+                border-top-color: rgba(45, 36, 22, 1);
+                border-right-color: rgba(45, 36, 22, 1);
+                border-bottom-color: rgba(45, 36, 22, 1);
+                border-left-color: rgba(45, 36, 22, 1);
+                border-top-style: solid;
+                border-right-style: solid;
+                border-bottom-style: solid;
+                border-left-style: solid;
+                border-top-width: 3px;
+                border-right-width: 3px;
+                border-bottom-width: 3px;
+                border-left-width: 3px;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+                border-bottom-right-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+              "
+            >
+              <div
+                id="32:84"
+                style="
+                  display: flex;
+                  align-items: center;
+                  row-gap: 1rem;
+                  column-gap: 1rem;
+                  margin-bottom: 1rem;
+                "
+              >
+                <img
+                  id="32:85"
+                  style="
+                    width: 3rem;
+                    height: 3rem;
+                    object-fit: cover;
+                    border-top-color: rgba(200, 168, 130, 1);
+                    border-right-color: rgba(200, 168, 130, 1);
+                    border-bottom-color: rgba(200, 168, 130, 1);
+                    border-left-color: rgba(200, 168, 130, 1);
+                    border-top-style: solid;
+                    border-right-style: solid;
+                    border-bottom-style: solid;
+                    border-left-style: solid;
+                    border-top-width: 2px;
+                    border-right-width: 2px;
+                    border-bottom-width: 2px;
+                    border-left-width: 2px;
+                    border-top-left-radius: 9999px;
+                    border-top-right-radius: 9999px;
+                    border-bottom-right-radius: 9999px;
+                    border-bottom-left-radius: 9999px;
+                  "
+                  alt="Future adventurer Lisa K - excited healthcare professional smiling confidently"
+                  src="https://static.paraflowcontent.com/public/resource/image/5c4922e8-d874-467d-b69d-e54a73323e8d.jpeg"
+                />
+                <div id="32:86">
+                  <h4
+                    id="32:87"
+                    style="
+                      line-height: 1.5;
+                      color: rgba(45, 36, 22, 1);
+                      font-size: 1rem;
+                      font-weight: 700;
+                    "
+                  >
+                    Lisa K., Future Adventurer
+                  </h4>
+                  <div
+                    id="32:88"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      row-gap: 0.25rem;
+                      column-gap: 0.25rem;
+                    "
+                  >
+                    <iconify-icon
+                      id="32:89"
+                      style="
+                        line-height: 1.42857;
+                        color: rgba(212, 145, 47, 1);
+                        font-size: 0.875rem;
+                      "
+                      icon="mdi:star"
+                    ></iconify-icon>
+                    <iconify-icon
+                      id="32:90"
+                      style="
+                        line-height: 1.42857;
+                        color: rgba(212, 145, 47, 1);
+                        font-size: 0.875rem;
+                      "
+                      icon="mdi:star"
+                    ></iconify-icon>
+                    <iconify-icon
+                      id="32:91"
+                      style="
+                        line-height: 1.42857;
+                        color: rgba(212, 145, 47, 1);
+                        font-size: 0.875rem;
+                      "
+                      icon="mdi:star"
+                    ></iconify-icon>
+                    <iconify-icon
+                      id="32:92"
+                      style="
+                        line-height: 1.42857;
+                        color: rgba(212, 145, 47, 1);
+                        font-size: 0.875rem;
+                      "
+                      icon="mdi:star"
+                    ></iconify-icon>
+                    <iconify-icon
+                      id="32:93"
+                      style="
+                        line-height: 1.42857;
+                        color: rgba(212, 145, 47, 1);
+                        font-size: 0.875rem;
+                      "
+                      icon="mdi:star"
+                    ></iconify-icon>
+                  </div>
+                </div>
+                <div
+                  id="32:94"
+                  style="
+                    background-color: rgba(74, 124, 78, 1);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: auto;
+                    padding-top: 0.25rem;
+                    padding-right: 0.75rem;
+                    padding-bottom: 0.25rem;
+                    padding-left: 0.75rem;
+                    line-height: 1.42857;
+                    color: rgba(255, 255, 255, 1);
+                    border-top-color: rgba(45, 36, 22, 1);
+                    border-right-color: rgba(45, 36, 22, 1);
+                    border-bottom-color: rgba(45, 36, 22, 1);
+                    border-left-color: rgba(45, 36, 22, 1);
+                    border-top-style: solid;
+                    border-right-style: solid;
+                    border-bottom-style: solid;
+                    border-left-style: solid;
+                    border-top-width: 2px;
+                    border-right-width: 2px;
+                    border-bottom-width: 2px;
+                    border-left-width: 2px;
+                    border-top-left-radius: 0.25rem;
+                    border-top-right-radius: 0.25rem;
+                    border-bottom-right-radius: 0.25rem;
+                    border-bottom-left-radius: 0.25rem;
+                    font-size: 0.875rem;
+                    font-weight: 900;
+                  "
+                >
+                  <span id="32:95">READY!</span>
+                </div>
+              </div>
+              <p
+                id="32:96"
+                style="
+                  line-height: 1.42857;
+                  color: rgba(92, 74, 50, 1);
+                  font-size: 0.875rem;
+                  font-style: italic;
+                "
+              >
+                "I can't wait to see Sir Bill Whacker tear through my hospital
+                bills! After getting blindsided by a $3,000 'facility fee,' I
+                need a champion who fights for working families. Sign me up for
+                this crusade!"
+              </p>
+            </div>
+            <div
+              id="32:97"
+              style="
+                background-color: rgba(255, 249, 240, 1);
+                padding-top: 1.5rem;
+                padding-right: 1.5rem;
+                padding-bottom: 1.5rem;
+                padding-left: 1.5rem;
+                box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  4px 4px 0 rgba(45, 36, 22, 1);
+                border-top-color: rgba(45, 36, 22, 1);
+                border-right-color: rgba(45, 36, 22, 1);
+                border-bottom-color: rgba(45, 36, 22, 1);
+                border-left-color: rgba(45, 36, 22, 1);
+                border-top-style: solid;
+                border-right-style: solid;
+                border-bottom-style: solid;
+                border-left-style: solid;
+                border-top-width: 3px;
+                border-right-width: 3px;
+                border-bottom-width: 3px;
+                border-left-width: 3px;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+                border-bottom-right-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+              "
+            >
+              <div
+                id="32:98"
+                style="
+                  display: flex;
+                  align-items: center;
+                  row-gap: 1rem;
+                  column-gap: 1rem;
+                  margin-bottom: 1rem;
+                "
+              >
+                <img
+                  id="32:99"
+                  style="
+                    width: 3rem;
+                    height: 3rem;
+                    object-fit: cover;
+                    border-top-color: rgba(200, 168, 130, 1);
+                    border-right-color: rgba(200, 168, 130, 1);
+                    border-bottom-color: rgba(200, 168, 130, 1);
+                    border-left-color: rgba(200, 168, 130, 1);
+                    border-top-style: solid;
+                    border-right-style: solid;
+                    border-bottom-style: solid;
+                    border-left-style: solid;
+                    border-top-width: 2px;
+                    border-right-width: 2px;
+                    border-bottom-width: 2px;
+                    border-left-width: 2px;
+                    border-top-left-radius: 9999px;
+                    border-top-right-radius: 9999px;
+                    border-bottom-right-radius: 9999px;
+                    border-bottom-left-radius: 9999px;
+                  "
+                  alt="Future adventurer Mike R - determined family man ready for battle against medical bills"
+                  src="https://static.paraflowcontent.com/public/resource/image/65a3c1ee-f9c3-4885-a5bb-43bcac447d7d.jpeg"
+                />
+                <div id="32:100">
+                  <h4
+                    id="32:101"
+                    style="
+                      line-height: 1.5;
+                      color: rgba(45, 36, 22, 1);
+                      font-size: 1rem;
+                      font-weight: 700;
+                    "
+                  >
+                    Mike R., Future Recruit
+                  </h4>
+                  <div
+                    id="32:102"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      row-gap: 0.25rem;
+                      column-gap: 0.25rem;
+                    "
+                  >
+                    <iconify-icon
+                      id="32:103"
+                      style="
+                        line-height: 1.42857;
+                        color: rgba(212, 145, 47, 1);
+                        font-size: 0.875rem;
+                      "
+                      icon="mdi:star"
+                    ></iconify-icon>
+                    <iconify-icon
+                      id="32:104"
+                      style="
+                        line-height: 1.42857;
+                        color: rgba(212, 145, 47, 1);
+                        font-size: 0.875rem;
+                      "
+                      icon="mdi:star"
+                    ></iconify-icon>
+                    <iconify-icon
+                      id="32:105"
+                      style="
+                        line-height: 1.42857;
+                        color: rgba(212, 145, 47, 1);
+                        font-size: 0.875rem;
+                      "
+                      icon="mdi:star"
+                    ></iconify-icon>
+                    <iconify-icon
+                      id="32:106"
+                      style="
+                        line-height: 1.42857;
+                        color: rgba(212, 145, 47, 1);
+                        font-size: 0.875rem;
+                      "
+                      icon="mdi:star"
+                    ></iconify-icon>
+                    <iconify-icon
+                      id="32:107"
+                      style="
+                        line-height: 1.42857;
+                        color: rgba(212, 145, 47, 1);
+                        font-size: 0.875rem;
+                      "
+                      icon="mdi:star"
+                    ></iconify-icon>
+                  </div>
+                </div>
+                <div
+                  id="32:108"
+                  style="
+                    background-color: rgba(232, 86, 60, 1);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: auto;
+                    padding-top: 0.25rem;
+                    padding-right: 0.75rem;
+                    padding-bottom: 0.25rem;
+                    padding-left: 0.75rem;
+                    line-height: 1.42857;
+                    color: rgba(255, 255, 255, 1);
+                    border-top-color: rgba(45, 36, 22, 1);
+                    border-right-color: rgba(45, 36, 22, 1);
+                    border-bottom-color: rgba(45, 36, 22, 1);
+                    border-left-color: rgba(45, 36, 22, 1);
+                    border-top-style: solid;
+                    border-right-style: solid;
+                    border-bottom-style: solid;
+                    border-left-style: solid;
+                    border-top-width: 2px;
+                    border-right-width: 2px;
+                    border-bottom-width: 2px;
+                    border-left-width: 2px;
+                    border-top-left-radius: 0.25rem;
+                    border-top-right-radius: 0.25rem;
+                    border-bottom-right-radius: 0.25rem;
+                    border-bottom-left-radius: 0.25rem;
+                    font-size: 0.875rem;
+                    font-weight: 900;
+                  "
+                >
+                  <span id="32:109">ENLISTED!</span>
+                </div>
+              </div>
+              <p
+                id="32:110"
+                style="
+                  line-height: 1.42857;
+                  color: rgba(92, 74, 50, 1);
+                  font-size: 0.875rem;
+                  font-style: italic;
+                "
+              >
+                "My family needs a hero like Sir Bill! Medical bills are the
+                biggest villain in our budget. I'm ready to join this rebellion
+                and finally fight back against these billing bandits!"
+              </p>
+            </div>
+          </div> -->
+          <div id="32:111" style="text-align: center">
+            <div
+              id="32:112"
+              style="
+                background-color: rgba(200, 168, 130, 1);
+                margin-bottom: 1.5rem;
+                padding-top: 2rem;
+                padding-right: 2rem;
+                padding-bottom: 2rem;
+                padding-left: 2rem;
+                box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                  6px 6px 0 rgba(45, 36, 22, 1);
+                border-top-color: rgba(45, 36, 22, 1);
+                border-right-color: rgba(45, 36, 22, 1);
+                border-bottom-color: rgba(45, 36, 22, 1);
+                border-left-color: rgba(45, 36, 22, 1);
+                border-top-style: solid;
+                border-right-style: solid;
+                border-bottom-style: solid;
+                border-left-style: solid;
+                border-top-width: 4px;
+                border-right-width: 4px;
+                border-bottom-width: 4px;
+                border-left-width: 4px;
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+                border-bottom-right-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+              "
+            >
+              <h3
+                id="32:113"
+                class="pf-2fded672-font-display"
+                style="
+                  margin-bottom: 1rem;
+                  line-height: 1.2;
+                  color: rgba(45, 36, 22, 1);
+                  font-size: 1.875rem;
+                  font-weight: 700;
+                "
+              >
+                THE CRUSADE LAUNCHES SOON!
+              </h3>
+              <p
+                id="32:114"
+                style="
+                  margin-bottom: 1.5rem;
+                  line-height: 1.55556;
+                  color: rgba(45, 36, 22, 1);
+                  font-size: 1.125rem;
+                  font-weight: 600;
+                "
+              >
+                Sir Bill Whacker is sharpening his analytical swords and
+                calibrating his AI-powered detection arsenal. Early recruits get
+                first access to the most epic bill-whacking adventure ever!
+              </p>
+              <button
+                id="32:115"
+                class="hover:shadow-[3px_3px_0px_rgba(45,36,22,1)] hover:translate-x-[3px] hover:translate-y-[3px]"
+                style="
+                  background-color: rgba(232, 86, 60, 1);
+                  display: flex;
+                  align-items: center;
+                  row-gap: 0.75rem;
+                  column-gap: 0.75rem;
+                  margin-right: auto;
+                  margin-left: auto;
+                  padding-top: 1rem;
+                  padding-right: 2rem;
+                  padding-bottom: 1rem;
+                  padding-left: 2rem;
+                  box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                    0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0),
+                    6px 6px 0 rgba(45, 36, 22, 1);
+                  line-height: 1.4;
+                  color: rgba(255, 255, 255, 1);
+                  border-top-color: rgba(45, 36, 22, 1);
+                  border-right-color: rgba(45, 36, 22, 1);
+                  border-bottom-color: rgba(45, 36, 22, 1);
+                  border-left-color: rgba(45, 36, 22, 1);
+                  border-top-style: solid;
+                  border-right-style: solid;
+                  border-bottom-style: solid;
+                  border-left-style: solid;
+                  border-top-width: 4px;
+                  border-right-width: 4px;
+                  border-bottom-width: 4px;
+                  border-left-width: 4px;
+                  border-top-left-radius: 0.5rem;
+                  border-top-right-radius: 0.5rem;
+                  border-bottom-right-radius: 0.5rem;
+                  border-bottom-left-radius: 0.5rem;
+                  font-size: 1.25rem;
+                  font-weight: 900;
+                "
+              >
+                <iconify-icon
+                  id="32:116"
+                  style="line-height: 1.4; font-size: 1.25rem"
+                  icon="mdi:sword"
+                ></iconify-icon>
+                <span id="32:117">ENLIST NOW - START WHACKING!</span>
+              </button>
+            </div>
+            <div
+              id="32:118"
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                row-gap: 2rem;
+                column-gap: 2rem;
+                line-height: 1.42857;
+                color: rgba(92, 74, 50, 1);
+                font-size: 0.875rem;
+              "
+            >
+              <div
+                id="32:119"
+                style="
+                  display: flex;
+                  align-items: center;
+                  row-gap: 0.5rem;
+                  column-gap: 0.5rem;
+                "
+              >
+                <iconify-icon
+                  id="32:120"
+                  style="
+                    line-height: 1.5;
+                    color: rgba(74, 124, 78, 1);
+                    font-size: 1rem;
+                  "
+                  icon="mdi:shield-check"
+                ></iconify-icon>
+                <span id="32:121" style="font-weight: 600"
+                  >Certified Bill Whacker</span
+                >
+              </div>
+              <div
+                id="32:122"
+                style="
+                  display: flex;
+                  align-items: center;
+                  row-gap: 0.5rem;
+                  column-gap: 0.5rem;
+                "
+              >
+                <iconify-icon
+                  id="32:123"
+                  style="
+                    line-height: 1.5;
+                    color: rgba(212, 145, 47, 1);
+                    font-size: 1rem;
+                  "
+                  icon="mdi:clock-fast"
+                ></iconify-icon>
+                <span id="32:124" style="font-weight: 600"
+                  >1-Minute Analysis</span
+                >
+              </div>
+              <div
+                id="32:125"
+                style="
+                  display: flex;
+                  align-items: center;
+                  row-gap: 0.5rem;
+                  column-gap: 0.5rem;
+                "
+              >
+                <iconify-icon
+                  id="32:126"
+                  style="
+                    line-height: 1.5;
+                    color: rgba(74, 124, 124, 1);
+                    font-size: 1rem;
+                  "
+                  icon="mdi:bank"
+                ></iconify-icon>
+                <span id="32:127" style="font-weight: 600"
+                  >Privacy Assurance</span
+                >
+              </div>
+              <div
+                id="32:128"
+                style="
+                  display: flex;
+                  align-items: center;
+                  row-gap: 0.5rem;
+                  column-gap: 0.5rem;
+                "
+              >
+                <iconify-icon
+                  id="32:129"
+                  style="
+                    line-height: 1.5;
+                    color: rgba(232, 86, 60, 1);
+                    font-size: 1rem;
+                  "
+                  icon="mdi:trophy"
+                ></iconify-icon>
+                <span id="32:130" style="font-weight: 600"
+                  >Victory Guaranteed</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
